@@ -21,6 +21,13 @@ spring:
           filters:
           - RewritePath=/api/package(?<segment>), /package$\{segment}
 
+        - id: class_route
+          uri: lb://class-microservice
+          predicates:
+          - Path=/api/class/**
+          filters:
+          - RewritePath=/api/class(?<segment>), /class$\{segment}
+
 management:
   endpoints:
     web:
