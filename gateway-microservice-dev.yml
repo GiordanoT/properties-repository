@@ -28,6 +28,14 @@ spring:
           filters:
           - RewritePath=/api/class(?<segment>), /class$\{segment}
 
+
+        - id: attribute_route
+          uri: lb://attribute-microservice
+          predicates:
+          - Path=/api/attribute/**
+          filters:
+          - RewritePath=/api/attribute(?<segment>), /attribute$\{segment}
+
 management:
   endpoints:
     web:
