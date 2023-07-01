@@ -42,6 +42,13 @@ spring:
           filters:
           - RewritePath=/api/metamodel(?<segment>), /metamodel$\{segment}
 
+        - id: object_route
+          uri: lb://object-microservice
+          predicates:
+          - Path=/api/object/**
+          filters:
+          - RewritePath=/api/object(?<segment>), /object$\{segment}
+
 management:
   endpoints:
     web:
