@@ -49,6 +49,14 @@ spring:
           filters:
           - RewritePath=/api/object(?<segment>), /object$\{segment}
 
+        - id: value_route
+          uri: lb://value-microservice
+          predicates:
+          - Path=/api/value/**
+          filters:
+          - RewritePath=/api/value(?<segment>), /value$\{segment}
+
+
 management:
   endpoints:
     web:
