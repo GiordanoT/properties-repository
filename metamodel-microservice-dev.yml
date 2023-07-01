@@ -3,20 +3,6 @@ server:
   port: 9005
        
 # User service configuration
-spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/sose_project?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
-    username: root
-    password: 
-  jpa:
-    defer-datasource-initialization: true
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        globally_quoted_identifiers: true
-
 management:
   endpoints:
     web:
