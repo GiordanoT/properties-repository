@@ -63,6 +63,13 @@ spring:
           filters:
           - RewritePath=/api/model(?<segment>), /model$\{segment}
 
+        - id: aggregator_route
+          uri: lb://aggregator-microservice
+          predicates:
+          - Path=/api/aggregator/**
+          filters:
+          - RewritePath=/api/aggregator(?<segment>), /aggregator$\{segment}
+
 
 management:
   endpoints:
