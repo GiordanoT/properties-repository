@@ -1,6 +1,6 @@
-# Port of the user service
+# Port of the service
 server:
-  port: 8080
+  port: 9010
        
 eureka:
   client:
