@@ -1,14 +1,14 @@
-# Port of the user service
+# Port of the service
 server:
   port: 9002
        
-# User service configuration
+# Service configuration
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/sose_project?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
-    username: root
-    password: 
+    url: jdbc:mysql://${MYSQL_HOST}/${MYSQL_DB}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}
   jpa:
     defer-datasource-initialization: true
     hibernate:
@@ -32,6 +32,6 @@ eureka:
     healthcheck:
       enabled: true
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: ${EUREKA_SERVER}
   instance:
     lease-renewal-interval-in-seconds: 30

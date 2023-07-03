@@ -1,8 +1,8 @@
-# Port of the user service
+# Port of the service
 server:
   port: 9001
        
-# User service configuration
+# Service configuration
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
